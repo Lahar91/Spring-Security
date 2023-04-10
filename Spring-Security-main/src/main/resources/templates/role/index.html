@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/role/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <button id="btn2" class="btn2" style="color: blue;">
+                CREATE NEW
+            </button>
+            <button id="btn3" class="btn2">
+                CREATE NEW 2
+            </button>
+            <table class="table">
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>ACTION</th>
+                </tr>
+                <tbody>
+                    <tr th:each="role : ${roles}">
+                        <td th:text="${role.id}"></td>
+                        <td th:text="${role.name}"></td>
+                        <td>
+                            <a th:href="@{role/form/{id} (id = ${role.id})}">Edit</a> | 
+                            <form th:action="@{role/delete/{id} (id = ${role.id})}" method="post">
+                                <input class="btn btn-danger" type="submit" value="Delete" />
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+    <script>
+        function clicked() {
+            window.alert("i'm clicked");
+        }
+    </script>
+</html>

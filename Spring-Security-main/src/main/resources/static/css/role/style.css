@@ -1,0 +1,14 @@
+ button {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: red;
+ }
+
+.btn2 {
+    width: 100px;
+    padding: 20px;
+}
+
+ #btn3 {
+     height: 100px;
+ }
